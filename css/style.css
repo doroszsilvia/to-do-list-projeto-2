@@ -1,0 +1,44 @@
+/*   GERAL  */
+
+* {
+    box-sizing: border-box;
+    list-style-type:none;
+    }
+
+body{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    background-image: linear-gradient(135deg, #ddc3fc, #90c5fc);
+    height: 100vh;  
+}
+hr{
+    color: #98949b;
+}
+
+.conteiner{
+    width: 30%;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    
+}
+
+.btn-tarefas{
+    background-color: #ba7af8;
+    color: #fff;
+    font-weight: 800;
+    border: 0;
+    width: 100%;
+    padding: 15px;
+}
+
+.form__input{
+    border: 0;
+    width: 75%;
+    margin:  50px 10px;
+}
+
+.list-tarefas{
+   background-color: #fff;
+   text-align: left;
+}
