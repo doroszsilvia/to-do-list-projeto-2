@@ -22,11 +22,23 @@ button.addEventListener("click", function (e){
     //LIMPA INPUT AO ENVIAR INPUT
     input.value = "";
 
-    
+    //ADD CHECK NOS ITENS
     linha.addEventListener("click", function(e){
         linha.style.textDecoration = "line-through"
+        linha.addEventListener("click", function(event){
+            event.preventDefault();
+            linha.remove()
+        })
     })
-    
-    
+
+    const span = document.createElement("span");
+    span.className = "list-tarefas__span"
+    span.innerHTML= `<button class="list-tarefas__botao-excluir">x</button>`
+    console.log(span)
+
+    linha.appendChild(span)    
+
+
+
 })
 
