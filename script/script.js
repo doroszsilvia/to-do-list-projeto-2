@@ -3,6 +3,7 @@ const input = document.querySelector(".form__input");
 const list = document.querySelector(".list-tarefas");
 const checkAll = document.querySelector(".btn-check-all");
 const deleteAll = document.querySelector(".btn-delete-all");
+const boxAll =  document.querySelector(".box-all");
 
 
 button.addEventListener("click", function(e) {
@@ -47,25 +48,28 @@ button.addEventListener("click", function(e) {
         // ADD SPAN NA LINHA   
     linha.appendChild(span)
 
+    //PARA VISUALIZAR OS BOTÕES DENTRO DO OUTRO BOTÃO
+    // deleteAll.style.display = "flex";
+    // checkAll.style.display = "flex";
 
-    deleteAll.style.display = "inline-block";
-    checkAll.style.display = "inline-block";
+    boxAll.style.display = "flex";
+    boxAll.style.justifyContent = "space-evenly";
 })
 
 checkAll.addEventListener("click", function(ev) {
     ev.preventDefault();
+    //ADD LINHA
     const item = document.querySelectorAll(".list-item");
+    //FOR PARA RISCAR E MUDAR COR
     for (let checado of item) { // mesma coisa que for normal [array]
         checado.style.textDecoration = "line-through"
         checado.style.color = "gray"
-
     }
-
 })
-
+// EVENTO CLICK PARA REMOVER HTML E LIMPAR ESTILOS
 deleteAll.addEventListener("click", function(evn) {
     evn.preventDefault();
     list.innerHTML = ""
-    list.removeAttribute("style")
-
+    //REMOVER O ESTILO TODA VEZ QUE DELETA
+    list.removeAttribute("style");
 })

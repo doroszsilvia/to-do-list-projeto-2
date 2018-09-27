@@ -61,12 +61,16 @@ hr{
  
 }
 .btn-check-all{
-    display: none;
+    /* display: none; */
     border: 0;
 }
 
 .btn-delete-all{
-    display: none;
+    /* display: none; */
     border: 0;
 }
 
+.box-all{
+    display: none;
+    border: 0;
+}
