@@ -9,17 +9,27 @@
 body{
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 12px;
-    background-image: linear-gradient(135deg, #ddc3fc, #90c5fc);
+    background-image: linear-gradient(135deg,#e0c3fc, #8ec5fc);
     height: 100vh;  
 }
-hr{
-    color: #98949b;
+/* hr{
+    color: #9a16ac;
+} */
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+h1{
+    padding-top: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 .conteiner{
     width: 30%;
     margin: 0 auto;
-    background-color: white;
+    background-color: #ffffff;
     text-align: center;
     
 }
@@ -36,6 +46,7 @@ hr{
 .form__input{
     border: 0;
     width: 75%;
+    height: 50px;
     margin:  50px 10px;
 
 }
@@ -50,27 +61,72 @@ hr{
 
 .list-tarefas__botao-excluir{
     border: 0;
-    
+    background-color:white;   
 }
 .list-item{
     font-size: 14px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #d3d3d3;
     display: flex;
-   justify-content: space-between;
-   padding: 15px;
+    justify-content: space-between;
+    padding: 15px;
  
 }
-.btn-check-all{
-    /* display: none; */
-    border: 0;
+.list-item.checked{
+    color: gray;
+    text-decoration: line-through;
+}
+.checkbox-container{
+    padding-bottom:10px;
+    font-weight: bold;
 }
 
-.btn-delete-all{
-    /* display: none; */
-    border: 0;
+.checkbox-delete-all{
+    padding-bottom:10px;
+    font-weight: bold;
 }
 
 .box-all{
     display: none;
     border: 0;
+    border-bottom: 1px solid #d3d3d3;
+    margin-top: 10px;
+}
+
+@media (max-width: 1024px){
+
+    .conteiner{
+        width: 70%;
+    }
+    .form__input, .btn-tarefas,.list-item{
+        font-size: 20px;
+    }
+    
+    h1{
+        font-size: 22px;
+    }
+    .box-all{
+        font-size: 18px;
+    }
+    
+    .list-tarefas__botao-excluir{
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px){
+        
+    .conteiner{
+        width: 80%;
+    }     
+}
+@media (max-width: 420px){
+
+    .conteiner{
+        width: 100%;
+    } 
+    h1{
+        font-size: 12px;
+    }
+    .form__input, .btn-tarefas,.list-item, .checkbox-container, .list-tarefas__botao-excluir{
+        font-size: 12px;
+    }
 }
