@@ -12,9 +12,7 @@ body{
     background-image: linear-gradient(135deg,#e0c3fc, #8ec5fc);
     height: 100vh;  
 }
-/* hr{
-    color: #9a16ac;
-} */
+
 hr {
     height: 12px;
     border: 0;
