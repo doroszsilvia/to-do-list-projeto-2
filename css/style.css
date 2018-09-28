@@ -24,6 +24,7 @@ h1{
     padding-top: 15px;
     text-transform: uppercase;
     font-size: 16px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .conteiner{
@@ -62,6 +63,7 @@ h1{
 .list-tarefas__botao-excluir{
     border: 0;
     background-color:white;   
+    padding: 0;
 }
 .list-item{
     font-size: 14px;
@@ -76,13 +78,18 @@ h1{
     text-decoration: line-through;
 }
 .checkbox-container{
-    padding-bottom:10px;
     font-weight: bold;
+    color: #ba7af8;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 5px 10px;
+}
+.delete-black{
+    height: 13px;
 }
 
-.checkbox-delete-all{
-    padding-bottom:10px;
-    font-weight: bold;
+.trash-purple{
+    height: 25px;
 }
 
 .box-all{

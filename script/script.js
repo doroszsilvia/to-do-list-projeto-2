@@ -8,6 +8,24 @@ const deleteAll = document.querySelector(".checkbox-delete-all");
 const boxAll =  document.querySelector(".box-all");
 
 
+function toggleCheck(e) {
+    e.preventDefault();
+    //INVERTE AS COISAS ATRAVÉS DA CLASSE QUE PEGOU NO CSS
+    this.classList.toggle("checked");
+    const listItems = document.querySelectorAll('.list-item');
+    const listItemsChecked = document.querySelectorAll('.list-item.checked');
+
+    const checkedAll = listItems.length == listItemsChecked.length;
+    checkAll.checked = checkedAll;
+    // E igual a isso
+    // if(listItems.length == listItemsChecked.length) {
+    //     checkAll.checked = true;
+    // } else {
+    //     checkAll.checked = false;
+    // }
+}
+
+
 button.addEventListener("click", function(e) {
     e.preventDefault();
     //alert("Oi!");
@@ -31,18 +49,12 @@ button.addEventListener("click", function(e) {
     input.value = "";
 
     //ADD CHECK NOS ITENS
-    linha.addEventListener("click", function(e) {
-        e.preventDefault();
-        
-        //INVERTE AS COISAS ATRAVÉS DA CLASSE QUE PEGOU NO CSS
-        this.classList.toggle("checked");
-
-    })
+    linha.addEventListener("click", toggleCheck)
     const span = document.createElement("span");
     //ADD CLASSE NO SPAN
     span.className = "list-tarefas__span"
     //ADD CLASSE BOTÃO NO SPAN DIRETO NO HTML
-    span.innerHTML = `<button class="list-tarefas__botao-excluir">x</button>`
+    span.innerHTML = `<button class="list-tarefas__botao-excluir"><img src="img/delete-black.png" class="delete-black"></button>`
 
     span.addEventListener("click", function(event) {
             event.preventDefault();
@@ -54,17 +66,20 @@ button.addEventListener("click", function(e) {
 
     //PARA VISUALIZAR OS BOTÕES DENTRO DO OUTRO BOTÃO
     boxAll.style.display = "flex";
-    boxAll.style.justifyContent = "space-around";
+    boxAll.style.justifyContent = "space-between";
 })
 
 checkAll.addEventListener("click", function() {
     const item = document.querySelectorAll(".list-item");
     //FOR PARA RISCAR E MUDAR COR
-    for (let checado of item) { // mesma coisa que for normal [array]
-        
+    for (let checado of item) { // mesma coisa que for normal [array]    
         //INVERTE AS COISAS ATRAVÉS DA CLASSE QUE PEGOU NO CSS
-        checado.classList.toggle("checked");
-    }
+        if(this.checked) {
+            checado.classList.add("checked");
+        } else {
+            checado.classList.remove("checked");
+        }
+    } 
 })
 // EVENTO CLICK PARA REMOVER HTML E LIMPAR ESTILOS
 deleteAll.addEventListener("click", function() {
